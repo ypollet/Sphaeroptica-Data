@@ -23,10 +23,25 @@ if "distortion matrix" in intrinsics:
 print(intrinsics.keys())
 
 intrinsics["cameraMatrix"]["matrix"] = np.array(intrinsics["cameraMatrix"]["matrix"]).reshape(-1).tolist()
+intrinsics["cameraMatrix"]["shape"] = {
+                    "row" : intrinsics["cameraMatrix"]["shape"][0],
+                    "col" : intrinsics["cameraMatrix"]["shape"][1]
+                },
+
 intrinsics["distortionMatrix"]["matrix"] = np.array(intrinsics["distortionMatrix"]["matrix"]).reshape(-1).tolist()
+intrinsics["distortionMatrix"]["shape"] = {
+                    "row" : intrinsics["distortionMatrix"]["shape"][0],
+                    "col" : intrinsics["distortionMatrix"]["shape"]
+                },
 
 for image_name in calib_file["extrinsics"]:
-    calib_file["extrinsics"][image_name]["matrix"] = np.array(calib_file["extrinsics"][image_name]["matrix"]).reshape(-1).tolist()
+    calib_file["extrinsics"][image_name]["matrix"] = {
+        "shape" : {
+                    "row" : 4,
+                    "col" : 4
+                },
+        "matrix" : np.array(calib_file["extrinsics"][image_name]["matrix"]).reshape(-1).tolist()
+    }
 
 done = False
 while not done:
