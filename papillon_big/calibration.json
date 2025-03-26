@@ -1,29 +1,29 @@
 {
     "commands": {
-        "FRONT": [
-            0,
-            0
-        ],
-        "POST": [
-            -180,
-            0
-        ],
-        "LEFT": [
-            90,
-            0
-        ],
-        "RIGHT": [
-            -90,
-            0
-        ],
-        "INFERIOR": [
-            -6,
-            -42
-        ],
-        "SUPERIOR": [
-            0,
-            90
-        ]
+        "FRONT": {
+            "longitude": 0,
+            "latitude": 0
+        },
+        "POST": {
+            "longitude": -180,
+            "latitude": 0
+        },
+        "LEFT": {
+            "longitude": 90,
+            "latitude": 0
+        },
+        "RIGHT": {
+            "longitude": -90,
+            "latitude": 0
+        },
+        "INFERIOR": {
+            "longitude": -6,
+            "latitude": -42
+        },
+        "SUPERIOR": {
+            "longitude": 0,
+            "latitude": 90
+        }
     },
     "thumbnails": "thumbnails",
     "intrinsics": {

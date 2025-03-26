@@ -54,6 +54,9 @@ if "version" not in calib_file or calib_file["version"] == "1.0.0":
 
 if calib_file["version"] == "2.0.0":
     calib_file["version"] = "2.0.1"
+    for command in calib_file["commands"]:
+        pos = calib_file["commands"][command]
+        calib_file["commands"][command] = {"longitude": pos[0], "latitude": pos[1]}
     for image_name in calib_file["extrinsics"]:
         print(calib_file["extrinsics"][image_name]["matrix"]["matrix"][0:12])
         calib_file["extrinsics"][image_name]["matrix"] = {
