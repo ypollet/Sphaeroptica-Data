@@ -40,7 +40,7 @@ if "version" not in calib_file or calib_file["version"] == "1.0.0":
     intrinsics["distortionMatrix"]["shape"] = (
         {
             "row": intrinsics["distortionMatrix"]["shape"][0],
-            "col": intrinsics["distortionMatrix"]["shape"],
+            "col": intrinsics["distortionMatrix"]["shape"][1],
         },
     )
 
@@ -57,6 +57,10 @@ if calib_file["version"] == "2.0.0":
     for command in calib_file["commands"]:
         pos = calib_file["commands"][command]
         calib_file["commands"][command] = {"longitude": pos[0], "latitude": pos[1]}
+
+    intrinsics["cameraMatrix"]["data"] = intrinsics["cameraMatrix"].pop("matrix")
+    intrinsics["distortionMatrix"]["data"] = intrinsics["cameraMatrix"].pop("matrix")
+
     for image_name in calib_file["extrinsics"]:
         print(calib_file["extrinsics"][image_name]["matrix"]["matrix"][0:12])
         calib_file["extrinsics"][image_name]["matrix"] = {
