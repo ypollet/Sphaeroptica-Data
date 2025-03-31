@@ -28,8 +28,8 @@
     },
     "thumbnails": "thumbnails",
     "intrinsics": {
-        "width": "5472",
-        "height": "3648",
+        "width": 5472,
+        "height": 3648,
         "cameraMatrix": {
             "shape": {
                 "row": 3,

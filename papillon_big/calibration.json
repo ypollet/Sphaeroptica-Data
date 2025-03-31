@@ -21,8 +21,8 @@
             "latitude": -42
         },
         "SUPERIOR": {
-            "longitude": 0,
-            "latitude": 90
+            "longitude": 180,
+            "latitude": 55
         }
     },
     "thumbnails": "thumbnails",
